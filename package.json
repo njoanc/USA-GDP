@@ -1,0 +1,17 @@
+{
+  "name": "usa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeanne d'Arc NYIRAMWIZA",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^6.2.0",
+    "d3-color": "^2.0.0",
+    "d3-selection": "^2.0.0",
+    "d3-webpack-loader": "^0.1.1"
+  }
+}
