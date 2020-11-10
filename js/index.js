@@ -22,19 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 return arr[0] + ' Q4';
         }
 
-        var padding = 95;
+        var padding = 80;
         var width = 900 + padding * 2; //dataset.length * 3
         var height = 500;
         var barWidth = 900 / dataset.length;
 
         const tooltip = d3.select("body")
             .append("div")
-            .attr("id", "tooltip");
+            .attr("id", "tooltip").style("fill", "rose");
 
         const svg = d3.select("#chart")
             .append("svg")
             .attr("width", width)
-            .attr("height", height);
+            .attr("height", height)
+        // .style("background-color", "white");
 
         svg.selectAll("rect")
             .data(dataset)
@@ -45,9 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("data-gdp", (d) => d[1])
             .attr("x", (d, i) => i * barWidth)
             .attr("y", (d) => 5 + (height - padding) - d[1] * (height - padding) / gdpMax)
+            // .style("fill", "green")
+            // .transition().duration(3000)
+            // .style("fill", "gray")
             .attr("width", barWidth)
             .attr("height", (d) => d[1] * (height - padding) / gdpMax)
             .attr("transform", "translate(" + padding + ", 0)")
+            // .style("fill", "orange")
+            // .transition().duration(2000)
+            // .style("fill", "green")
 
             .on("mouseover", function (d) {
                 return tooltip.style("visibility", "visible")
@@ -86,11 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
         svg.append("g")
             .attr("transform", "translate(" + padding + ", 3)")
             .attr("id", "y-axis")
-            .call(y_axis);
+            .call(y_axis).transition().duration(5000).style("fill", "black");
 
         svg.append("text")
             .text("Gross Domestic Product")
-            .style("fill", "green")
+            .style("fill", "green").transition().duration(3000).style("fill", "red")
             .attr("x", -200)
             .attr("y", padding + 30)
             .attr("transform", "rotate(-90)");

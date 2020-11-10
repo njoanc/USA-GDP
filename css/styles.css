@@ -1,7 +1,7 @@
-@media screen and(max-device-width:640px){
-  body {
+body {
     text-align: center;
     padding: 5px;
+    /* background-color: #071658; */
   }
   
   #main {
@@ -22,11 +22,11 @@
   }
   
   .bar {
-    fill: #3c7e07;
+    fill: #eca02f;
   }
   
   .bar:hover {
-    fill: #071658;
+    fill: #0eaa35;
   }
   
   #tooltip {
@@ -42,4 +42,4 @@
     box-shadow: 0 0 10px 2px #404040;
   }
 
-}
+
